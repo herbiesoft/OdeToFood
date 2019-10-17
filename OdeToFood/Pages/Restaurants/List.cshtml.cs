@@ -17,6 +17,7 @@ namespace OdeToFood.Pages.Restaurants
 
 
         public string Message { get; set; }
+        public string Connect { get; set; }
         public IEnumerable<Restaurant> Restaurants { get; set; }
 
         [BindProperty(SupportsGet = true)]
@@ -32,7 +33,7 @@ namespace OdeToFood.Pages.Restaurants
         {
             Message = _config["Message"];
             Restaurants = _restaurantData.GetRestaurantsByName(SearchTerm);
-            
+            Connect = _config.GetConnectionString("OdeToFoodDB");
         }
     }
 }
