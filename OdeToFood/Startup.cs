@@ -29,7 +29,7 @@ namespace OdeToFood
                     options.UseSqlServer(Configuration.GetConnectionString("OdeToFoodDB"));
                 });
 
-            services.AddSingleton<IRestaurantData , InMemoryRestaurantsData>();
+            services.AddScoped<IRestaurantData , SqlRestaurantData>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
